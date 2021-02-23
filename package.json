@@ -1,9 +1,9 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
+  "name": "snackbar-customhook-tut",
+  "description": "Typescript project",
   "version": "1.0.0",
   "private": true,
-  "author": "João Pedro Schmitz <oi@joaopedro.cc> (joaopedro.cc)",
+  "author": "Michal Szymanski",
   "license": "MIT",
   "keywords": [
     "nextjs",
@@ -38,6 +38,7 @@
     "@types/react-dom": "17.0.1",
     "@typescript-eslint/eslint-plugin": "4.15.1",
     "@typescript-eslint/parser": "4.15.1",
+    "autoprefixer": "10.2.4",
     "commitizen": "4.2.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.20.0",
@@ -51,7 +52,9 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "5.0.9",
     "lint-staged": "10.5.4",
+    "postcss": "8.2.6",
     "prettier": "2.2.1",
+    "tailwindcss": "2.0.3",
     "typescript": "4.1.5"
   },
   "config": {
