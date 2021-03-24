@@ -19,6 +19,7 @@
       "@pages/*": ["src/pages/*"],
       "@assets/*": ["src/assets/*"],
       "@styles/*": ["src/styles/*"],
+      "@feature/*": ["src/feature/*"]
     }
   },
   "exclude": ["node_modules"],
