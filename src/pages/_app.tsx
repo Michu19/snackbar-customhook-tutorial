@@ -1,7 +1,9 @@
-import { NextPage } from 'next';
 import { AppProps } from 'next/app';
-import { FC } from 'react';
 import '@assets/css/main.css';
+import { SnackbarProvider } from '@feature/hooks/useSnackbarContext';
+import { Snackbar } from '@components/snackbar/snackbar';
+import { NextPage } from 'next';
+import { FC } from 'react';
 
 export type PageComponent<P = unknown> = NextPage<P> & {
   Layout?: FC;
@@ -9,12 +11,20 @@ export type PageComponent<P = unknown> = NextPage<P> & {
 
 const Noop: FC = ({ children }) => <>{children}</>;
 
+export const Layout: FC = ({ children }) => <div>{children}</div>;
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   const Layout = (Component as PageComponent).Layout || Noop;
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <SnackbarProvider>
+        <div id="snackbarModal-root" />
+        <Snackbar />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SnackbarProvider>
+    </>
   );
 }

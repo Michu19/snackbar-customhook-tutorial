@@ -1,7 +1,29 @@
-import Layout from '@components/Layout';
+import {
+  TypeNotification,
+  useSnackbar,
+} from '@feature/hooks/useSnackbarContext';
+import { Layout, PageComponent } from '../_app';
 
-const HomePage = () => <div>HomePage</div>;
+const UsersHome: PageComponent = () => {
+  const openSnackbar = useSnackbar();
 
-HomePage.Layout = Layout;
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => {
+          openSnackbar(
+            `Konto administratora zostało pomyślnie utworzone.`,
+            TypeNotification.Success,
+          );
+        }}
+      >
+        Trololo
+      </button>
+      Users home
+    </div>
+  );
+};
+UsersHome.Layout = Layout;
 
-export default HomePage;
+export default UsersHome;
